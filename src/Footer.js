@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <span className="link-code">
       <a
-        href="https://github.com/ZubenkoAnna/app-weather"
+        href="https://github.com/ZubenkoAnna/app-react"
         target="_blank"
         className="code"
       >
