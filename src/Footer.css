@@ -1,0 +1,9 @@
+.link-code {
+  font-size: 80%;
+  font-weight: 400;
+  margin-top: 10px;
+}
+a.code {
+  color: #007bff;
+  text-decoration: none;
+}
