@@ -8,3 +8,79 @@
   cursor: pointer;
   background: #cc360d;
 }
+
+.row.head {
+  padding-top: 50px;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: gray;
+}
+
+.heading-s {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: gray;
+}
+
+.float-left {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+}
+
+.temperature {
+  font-weight: 600;
+  font-size: 38px;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: gray;
+  text-align: center;
+}
+
+.row.head .col-sm-3 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.city {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.units {
+  position: relative;
+  top: -18px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+
+#celsius-link {
+  text-decoration: none;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+}
+
+.forecast {
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Input from "./input";
-import Header from "./Header";
+//import Header from "./Header";
 import Footer from "./Footer";
 
 import "./index.css";
@@ -12,7 +12,6 @@ function App() {
       <div className="main-wrapper">
         <div className="main">
           <Input />
-          <Header />
         </div>
         <Footer />
       </div>
