@@ -7,7 +7,7 @@ export default function Footer() {
     <span className="link-code">
       <a
         href="https://github.com/ZubenkoAnna/app-react"
-        target="_blank"
+        rel="noopener"
         className="code"
       >
         Open-source code
