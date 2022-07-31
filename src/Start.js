@@ -1,37 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 
-import "./input.css";
-
-export default function Input() {
-  let [city, setCity] = useState("");
-  let [weather, setWeather] = useState(false);
-
-  function showWeather(event) {
-    event.preventDefault();
-
-    function showParameters(response) {
-      setWeather({
-        city: response.data.name,
-        country: response.data.sys.country,
-        temperature: response.data.main.temp,
-        description: response.data.weather[0].description,
-        humidity: response.data.main.humidity,
-        wind: response.data.wind.speed,
-        icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      });
-    }
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b9e5645fd345ccef8ad19143373284ef&units=metric`;
-    axios.get(url).then(showParameters);
+export default function Start() {
+  let weather;
+  function showParameters(response) {
+    weather({
+      city: response.data.name,
+      country: response.data.sys.country,
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    });
   }
-
-  function showSubmit(event) {
-    setCity(event.target.value);
-  }
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=NewYork&appid=b9e5645fd345ccef8ad19143373284ef&units=metric`;
+  axios.get(url).then(showParameters);
 
   return (
     <div>
-      <form className="search-form" onSubmit={showWeather}>
+      <form className="search-form">
         <div className="row">
           <span className="col-sm-6">
             <input
@@ -40,7 +28,6 @@ export default function Input() {
               autoFocus="on"
               autoComplete="off"
               className="form-control"
-              onChange={showSubmit}
             />
           </span>
           <span className="col-sm-3">
@@ -102,11 +89,7 @@ export default function Input() {
           <div className="forecast">
             <p>Fri</p>
             <div className="forecastIcon">
-              <img
-                src={`https://openweathermap.org/img/wn/02d@2x.png`}
-                alt=""
-                width="72px"
-              />
+              <img src={weather.icon} alt="" width="72px" />
             </div>
             <span>22° 13°</span>
           </div>
@@ -124,11 +107,7 @@ export default function Input() {
           <div className="forecast">
             <p>Sun</p>
             <div className="forecastIcon">
-              <img
-                src={`https://openweathermap.org/img/wn/02d@2x.png`}
-                alt=""
-                width="72px"
-              />
+              <img src={weather.icon} alt="" width="72px" />
             </div>
             <span>30° 23°</span>
           </div>
@@ -146,11 +125,7 @@ export default function Input() {
           <div className="forecast">
             <p>Tue</p>
             <div className="forecastIcon">
-              <img
-                src={`https://openweathermap.org/img/wn/04d@2x.png`}
-                alt=""
-                width="72px"
-              />
+              <img src={weather.icon} alt="" width="72px" />
             </div>
             <span>25° 19°</span>
           </div>

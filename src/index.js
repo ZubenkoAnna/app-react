@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Input from "./input";
+import Main from "./Main";
 //import Header from "./Header";
 import Footer from "./Footer";
 
@@ -11,7 +11,7 @@ function App() {
     <div className="container">
       <div className="main-wrapper">
         <div className="main">
-          <Input />
+          <Main />
         </div>
         <Footer />
       </div>
