@@ -78,7 +78,7 @@ export default function Forecast() {
               width="72px"
             />
           </div>
-          <span>23° 16°</span>
+          <span>23° 18°</span>
         </div>
       </div>
     </div>
