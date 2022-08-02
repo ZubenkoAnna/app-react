@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Form from "./Form";
+import Weather from "./Weather";
 import Forecast from "./Forecast";
 import CurrentDate from "./CurrentDate";
 
@@ -28,44 +28,35 @@ export default function Main(props) {
   if (currentWeather.ready) {
     return (
       <div>
-        <Form />
+        <form className="search-form">
+          <div className="row">
+            <span className="col-sm-6">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autoFocus="on"
+                autoComplete="off"
+                className="form-control"
+              />
+            </span>
+            <span className="col-sm-3">
+              <input
+                type="submit"
+                value="Search"
+                className="form-control btn btn-primary"
+              />
+            </span>
+            <span className="col-sm-3">
+              <input
+                type="submit"
+                value="Current"
+                className="form-control btn btn-success"
+              />
+            </span>
+          </div>
+        </form>
 
-        <div className="row head">
-          <div className="col-sm-6">
-            <p className="heading">
-              <CurrentDate date={currentWeather.date} />
-            </p>
-            <p className="city">
-              <span>{currentWeather.city},</span>
-              <span> {currentWeather.country}</span>
-            </p>
-          </div>
-          <div className="col-sm-3">
-            <p className="description text-capitalize">
-              {currentWeather.description}
-            </p>
-            <img
-              src={currentWeather.icon}
-              alt={currentWeather.description}
-              className="float-left"
-            />
-          </div>
-          <div className="col-sm-3">
-            <p className="heading-s">
-              Humidity:<span> {currentWeather.humidity}%</span>
-            </p>
-            <p className="heading-s">
-              Wind:<span> {Math.round(currentWeather.wind)}km/h</span>
-            </p>
-            <div className="temperature">
-              <span>{Math.round(currentWeather.temperature)} </span>
-              <span className="units">
-                <a href="#">°C</a> | <a href="#">°F</a>
-              </span>
-            </div>
-          </div>
-        </div>
-
+        <Weather info={currentWeather} />
         <Forecast />
       </div>
     );
