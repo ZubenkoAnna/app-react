@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Form from "./Form";
 import Forecast from "./Forecast";
+import CurrentDate from "./CurrentDate";
 
 import "./Main.css";
 
@@ -13,7 +14,7 @@ export default function Main(props) {
       ready: true,
       city: response.data.name,
       country: response.data.sys.country,
-      date: "Wensday 16:54",
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       maxTemp: response.data.main.temp_max,
       minTemp: response.data.main.temp_min,
@@ -31,7 +32,9 @@ export default function Main(props) {
 
         <div className="row head">
           <div className="col-sm-6">
-            <p className="heading">{currentWeather.date}</p>
+            <p className="heading">
+              <CurrentDate date={currentWeather.date} />
+            </p>
             <p className="city">
               <span>{currentWeather.city},</span>
               <span> {currentWeather.country}</span>
