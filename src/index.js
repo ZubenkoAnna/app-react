@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Main from "./Main";
-//import Header from "./Header";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer";
 
 import "./index.css";
@@ -11,7 +11,7 @@ function App() {
     <div className="container">
       <div className="main-wrapper">
         <div className="main">
-          <Main />
+          <Main defaulteCity="Kharkiv" />
         </div>
         <Footer />
       </div>
