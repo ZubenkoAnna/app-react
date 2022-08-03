@@ -11,7 +11,7 @@ function App() {
     <div className="container">
       <div className="main-wrapper">
         <div className="main">
-          <Main defaulteCity="Kharkiv" />
+          <Main defaultCity="Kharkiv" />
         </div>
         <Footer />
       </div>
