@@ -1,5 +1,7 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
+import WeatherIconAnimated from "./WeatherIconAnimated";
+import WeatherIcon from "./WeatherIcon";
 
 import "./Main.css";
 
@@ -17,11 +19,12 @@ export default function Weather(props) {
       </div>
       <div className="col-sm-3">
         <p className="description text-capitalize">{props.info.description}</p>
-        <img
-          src={props.info.icon}
-          alt={props.info.description}
-          className="float-left"
-        />
+        <div className="float-left">
+          <WeatherIcon
+            code={props.info.iconStatic}
+            alt={props.info.description}
+          />
+        </div>
       </div>
       <div className="col-sm-3">
         <p className="heading-s">
