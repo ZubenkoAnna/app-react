@@ -25,7 +25,7 @@ export default function Main(props) {
   }
 
   function handleSubmit(event) {
-    event.preventDefaulte();
+    event.preventDefault();
     search();
   }
 
