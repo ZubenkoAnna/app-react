@@ -2,6 +2,7 @@ import React from "react";
 import CurrentDate from "./CurrentDate";
 import WeatherIconAnimated from "./WeatherIconAnimated";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 import "./Main.css";
 
@@ -34,10 +35,7 @@ export default function Weather(props) {
           Wind:<span> {Math.round(props.info.wind)} km/h</span>
         </p>
         <div className="temperature">
-          <span>{Math.round(props.info.temperature)} </span>
-          <span className="units">
-            <a href="#">°C</a> | <a href="#">°F</a>
-          </span>
+          <WeatherTemperature celsiuse={props.info.temperature} />
         </div>
       </div>
     </div>
