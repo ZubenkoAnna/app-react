@@ -9,14 +9,14 @@ export default function Main(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function showParameters(response) {
+    console.log(response.data);
     setCurrentWeather({
       ready: true,
       city: response.data.name,
       country: response.data.sys.country,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
-      maxTemp: response.data.main.temp_max,
-      minTemp: response.data.main.temp_min,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -73,7 +73,7 @@ export default function Main(props) {
         </form>
 
         <Weather info={currentWeather} />
-        <Forecast />
+        <Forecast coord={currentWeather.coordinates} />
       </div>
     );
   } else {
