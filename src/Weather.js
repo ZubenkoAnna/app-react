@@ -1,6 +1,6 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
-import WeatherIconAnimated from "./WeatherIconAnimated";
+//import WeatherIconAnimated from "./WeatherIconAnimated";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
@@ -22,7 +22,7 @@ export default function Weather(props) {
         <p className="description text-capitalize">{props.info.description}</p>
         <div className="float-left">
           <WeatherIcon
-            code={props.info.iconStatic}
+            code={props.info.icon}
             alt={props.info.description}
             size={100}
           />
