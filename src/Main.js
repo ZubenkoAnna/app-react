@@ -44,7 +44,7 @@ export default function Main(props) {
       <div className="search-form">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <span className="col-sm-6">
+            <span className="col-sm-9">
               <input
                 type="search"
                 placeholder="Type a city.."
@@ -59,13 +59,6 @@ export default function Main(props) {
                 type="submit"
                 value="Search"
                 className="form-control btn btn-primary"
-              />
-            </span>
-            <span className="col-sm-3">
-              <input
-                type="submit"
-                value="Current"
-                className="form-control btn btn-success"
               />
             </span>
           </div>
